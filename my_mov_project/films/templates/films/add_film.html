@@ -1,0 +1,37 @@
+{% extends 'my_mov_project/layout.html' %}
+
+{% block title %}Добавление фильма{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="mb-4 text-center text-primary">Добавить фильм</h1>
+    <form method="post" enctype="multipart/form-data" action="{% url 'films:add_film' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="title" class="form-label fw-bold">Название фильма:</label>
+            <input type="text" id="title" name="title" class="form-control" placeholder="Введите название фильма" required>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label fw-bold">Описание фильма:</label>
+            <textarea id="description" name="description" class="form-control" rows="4" placeholder="Введите описание фильма" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label fw-bold">Изображение фильма:</label>
+            <input type="file" id="image" name="image" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="genre" class="form-label fw-bold">Жанр фильма:</label>
+            <select id="genre" name="genre" class="form-select" required>
+                <option value="" disabled selected>Выберите жанр</option>
+                <option value="action">Боевик</option>
+                <option value="comedy">Комедия</option>
+                <option value="drama">Драма</option>
+                <!-- добавьте другие жанры -->
+            </select>
+        </div>
+        <div class="d-grid">
+            <button type="submit" class="btn btn-info btn-lg text-white">Добавить фильм</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

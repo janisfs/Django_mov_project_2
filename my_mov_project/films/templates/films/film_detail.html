@@ -1,0 +1,17 @@
+{% extends 'my_mov_project/layout.html' %}
+
+<title>{% block title %}
+    {{ film.title }}
+{% endblock %}</title>
+
+
+{% block content %}
+    <div class="container">
+        <!-- содержимое страницы films -->
+        <h1>{{ film.title }}</h1>
+        <img src="{{ film.image.url }}" alt="{{ film.title }}">
+        <p>{{ film.description | linebreaks }}</p>
+        <p>Жанр: {{ film.genre }}</p>
+        <a href="{% url 'films:films' %}" class="btn btn-outline-info">Назад</a>
+    </div>
+{% endblock %}
