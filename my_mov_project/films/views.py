@@ -39,7 +39,7 @@ def films_detail(request, film_id):
         'film': film,
         'comments': comments,
         'form': form,
-        'test_message': 'Это тестовая строка'
+        # 'test_message': 'Это тестовая строка'
     })
 
 

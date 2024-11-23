@@ -3,7 +3,7 @@
 {% block title %}Добавление фильма{% endblock %}
 
 {% block content %}
-<div class="container py-5">
+<div class="container py-2">
     <h1 class="mb-4 text-center text-primary">Добавить фильм</h1>
     <form method="post" enctype="multipart/form-data" action="{% url 'films:add_film' %}">
         {% csrf_token %}
