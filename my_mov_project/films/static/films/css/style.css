@@ -2,3 +2,9 @@
 body {
     background-color: #fefefe; /* Светлый фон */
 }
+
+.form-control {
+    width: 50%;
+    height: 30px;
+    font-size: 16px;
+}

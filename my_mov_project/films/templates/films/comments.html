@@ -1,0 +1,7 @@
+<h2>Комментарии</h2>
+<ul>
+    {% for comment in comments %}
+        <li>{{ comment.text }} - <strong>
+            {{ comment.author }}</strong></li>
+    {% endfor %}
+</ul>
